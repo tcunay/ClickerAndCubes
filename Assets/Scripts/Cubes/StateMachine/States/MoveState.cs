@@ -1,18 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Cubes.StateMachine
 {
     [RequireComponent(typeof(Cube))]
-    public class MoveToDistanceState : State
+    public class MoveState : State
     {
         private Cube _cube;
         private Vector3 _startPosition;
-        private float _distance;
-        private float _speed;
 
-        public float Distance => _distance;
+        public float Distance => _cube.Stats.Distance;
 
         public float DistanceTraveled => (transform.position - _startPosition).magnitude;
 
@@ -28,18 +24,12 @@ namespace Cubes.StateMachine
 
         private void Update()
         {
-            TryMove();
-        }
-
-        private void TryMove()
-        {
-            if (true)
-                Move();
+            Move();
         }
 
         private void Move()
         {
-            transform.position = Vector2.MoveTowards(transform.position, Vector3.forward * _distance, _speed * Time.deltaTime);
+            transform.Translate(Vector3.forward * _cube.Stats.Speed * Time.deltaTime);
         }
     }
 }

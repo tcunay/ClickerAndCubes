@@ -2,7 +2,6 @@ using UnityEngine;
 
 namespace Cubes.StateMachine
 {
-
     public abstract class Transition : MonoBehaviour
     {
         [SerializeField] private State _targetState;

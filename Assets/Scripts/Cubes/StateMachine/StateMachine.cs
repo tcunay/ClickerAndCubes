@@ -2,7 +2,6 @@ using UnityEngine;
 
 namespace Cubes.StateMachine
 {
-
     public class StateMachine : MonoBehaviour
     {
         [SerializeField] private State _firstState;

@@ -1,17 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Cubes.StateMachine
 {
-    [RequireComponent(typeof(MoveToDistanceState))]
+    [RequireComponent(typeof(MoveState))]
     public class DistanceTransiton : Transition
     {
-        private MoveToDistanceState _moveToDistanceState;
+        private MoveState _moveToDistanceState;
 
         private void Awake()
         {
-            _moveToDistanceState = GetComponent<MoveToDistanceState>();
+            _moveToDistanceState = GetComponent<MoveState>();
         }
 
         private void Update()

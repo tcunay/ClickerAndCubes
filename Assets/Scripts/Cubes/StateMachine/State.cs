@@ -3,7 +3,6 @@ using UnityEngine;
 
 namespace Cubes.StateMachine
 {
-
     public abstract class State : MonoBehaviour
     {
         [SerializeField] private List<Transition> _transitions;
@@ -17,7 +16,6 @@ namespace Cubes.StateMachine
                 foreach (var transition in _transitions)
                 {
                     transition.SetActive(true);
-                    //transition.Init();
                 }
             }
         }
